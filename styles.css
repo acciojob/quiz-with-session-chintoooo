@@ -1,1 +1,49 @@
 /*  your css code here. If applicable */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.question-container {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.choice-container {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+#submit {
+  display: block;
+  width: 100px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#score {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
