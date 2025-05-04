@@ -1,23 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  padding: 20px;
 }
 
 #questions > div {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
-  margin-left: 20px;
-}
-
-#submit {
-  margin-top: 20px;
-  padding: 10px 20px;
-}
-
-#score {
-  margin-top: 20px;
-  font-weight: bold;
 }

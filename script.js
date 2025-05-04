@@ -6,7 +6,7 @@ const questions = [
   },
   {
     question: "Which language runs in a web browser?",
-    choices: ["Java", "C", "Python", "JavaScript"],
+    choices: ["JavaScript", "Java", "C", "Python"],
     answer: "JavaScript"
   },
   {
@@ -16,7 +16,7 @@ const questions = [
   },
   {
     question: "Which planet is known as the Red Planet?",
-    choices: ["Earth", "Venus", "Mars", "Jupiter"],
+    choices: ["Venus", "Earth", "Mars", "Jupiter"],
     answer: "Mars"
   },
   {
