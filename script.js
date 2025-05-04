@@ -32,11 +32,15 @@ const questionsContainer = document.getElementById("questions");
 const scoreDisplay = document.getElementById("score");
 const submitBtn = document.getElementById("submit");
 
-const savedProgress = JSON.parse(sessionStorage.getItem("progress")) || {};
+// Ensure scoreDisplay is empty at first (for Cypress Test 1)
+scoreDisplay.textContent = "";
+
+// Load progress from sessionStorage (for Cypress Test 2)
+let savedProgress = JSON.parse(sessionStorage.getItem("progress")) || {};
 
 // Render questions and restore selections
 questions.forEach((q, index) => {
-  const questionDiv = document.createElement("div");
+  const questionDiv = document.createElement("div"); // Each question in <div>
   const questionText = document.createElement("p");
   questionText.textContent = `${index + 1}. ${q.question}`;
   questionDiv.appendChild(questionText);
@@ -45,13 +49,15 @@ questions.forEach((q, index) => {
     const label = document.createElement("label");
     const radio = document.createElement("input");
     radio.type = "radio";
-    radio.name = `question${index}`;
+    radio.name = `question${index}`; // radio group by question
     radio.value = option;
 
+    // Restore selection if exists
     if (savedProgress[`question${index}`] === option) {
       radio.checked = true;
     }
 
+    // Save on change
     radio.addEventListener("change", () => {
       savedProgress[`question${index}`] = option;
       sessionStorage.setItem("progress", JSON.stringify(savedProgress));
@@ -65,7 +71,7 @@ questions.forEach((q, index) => {
   questionsContainer.appendChild(questionDiv);
 });
 
-// Handle Submit
+// On Submit button click (for Cypress Test 3)
 submitBtn.addEventListener("click", () => {
   let score = 0;
 
@@ -81,7 +87,7 @@ submitBtn.addEventListener("click", () => {
   localStorage.setItem("score", score);
 });
 
-// Display last score on page load (optional but useful)
+// Display last score on page load (Optional: supports Cypress Test 3 after refresh)
 const lastScore = localStorage.getItem("score");
 if (lastScore !== null) {
   scoreDisplay.textContent = `Your score is ${lastScore} out of 5.`;
